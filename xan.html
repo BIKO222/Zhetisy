@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        header {
+            width: 100%;
+            height: 140px;
+            color: rgb(0, 0, 0);
+            background-color: rgb(211, 243, 255);
+            text-align: center;
+            font-size: 40px;
+            line-height: 140px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        header button {
+            width: 150px;
+            height: 100px;
+            border: 2px solid black;
+            border-radius: 30px;
+            font-size: 20px;
+            font-weight: 800;
+            float: left;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        button a {
+            text-decoration: none;
+            color: black;
+        }
+
+        body {
+            background-color: wheat;
+            padding-top: 140px; /* Adjust for the fixed header */
+        }
+
+        .xan {
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .xan img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 20px;
+        }
+
+        .xan h1 {
+            text-align: center;
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        .xan .text1 {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        @media screen and (max-width: 1560px) {
+            header {
+                font-size: 30px;
+                line-height: 100px;
+            }
+
+            header button {
+                width: 100px;
+                height: 60px;
+                font-size: 15px;
+                top: 20px;
+                left: 20px;
+            }
+
+            .xan {
+                padding: 10px;
+            }
+
+            .xan h1 {
+                font-size: 40px;
+            }
+
+            .xan .text1 {
+                font-size: 20px;
+            }
+        }
+
+        @media screen and (max-width: 720px) {
+            header {
+                height: 60px;
+                line-height: 60px;
+                font-size: 20px;
+            }
+
+            header button {
+                width: 60px;
+                height: 40px;
+                font-size: 10px;
+                top: 10px;
+                left: 10px;
+            }
+
+            .xan h1 {
+                font-size: 30px;
+            }
+
+            .xan .text1 {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <button><a href="index.html">Артқа</a></button>
+    <abbr>Хан Тәңірі</abbr>
+</header>
+<div class="xan">
+    <h1>Хан Тәңірі</h1>
+    <img src="https://tengritravel.kz/userdata/u187/2020-11/resize/0aea9342da994eb82d822da080104a45.jpeg" alt="Khan Tengri">
+    <div class="text1">
+        Хан Тәңірі – Қазақстан, Қырғызстан және Қытай шекарасында орналасқан Тянь-Шань тау жотасындағы ең биік шыңдардың бірі.</div>
+    <div class="text1">
+
+        Ол теңіз деңгейінен 7 010 метр (22 999 фут) биіктікке көтеріліп, оны Тянь-Шаньдағы екінші ең биік шың етеді.</div>
+    <div class="text1">
+        Хан Тәңірі - әлемнің түкпір-түкпірінен альпинистер мен альпинистер үшін танымал орын.</div>
+    <div class="text1">
+        Елдер: Қазақстан, Қырғызстан, Қытай.
+    </div>
+</div>
+</body>
+</html>
