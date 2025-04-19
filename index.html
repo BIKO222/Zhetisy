@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Тур по Жетысу</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Trebuchet MS', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: linear-gradient(180deg, #ffffff 0%, #5465ff 100%);
+      color: #333;
+    }
+
+    header {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    header h1 {
+      font-size: 50px;
+      font-weight: bold;
+      color: #2c3e50;
+      text-transform: uppercase;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #2c3e50;
+      padding: 15px;
+      font-weight: bold;
+      transition: all 0.3s ease-in-out;
+    }
+
+    nav a:hover {
+      color: #3498db;
+      text-shadow: 0px 0px 5px rgba(52, 152, 219, 0.5);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 50px auto;
+      padding: 35px;
+      background: linear-gradient(135deg, #ffffff, #f9f9f9);
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease-in-out;
+    }
+
+    .container:hover {
+      transform: scale(1.03);
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 32px;
+      color: #34495e;
+      font-weight: bold;
+    }
+
+    .gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  padding: 20px;
+}
+
+.gallery-item {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.popup img {
+  max-width: 80%;
+  border-radius: 10px;
+}
+
+.close {
+  position: absolute;
+  top: 20px; right: 30px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      padding: 18px;
+      background: linear-gradient(90deg, #ecf0f1, #dfe6e9);
+      border-left: 6px solid #3498db;
+      margin-bottom: 12px;
+      border-radius: 10px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    li:hover {
+      background: #3498db;
+      color: white;
+      transform: scale(1.05);
+    }
+
+    a {
+      text-decoration: none;
+      font-weight: bold;
+      color: #2c3e50;
+    }
+
+    a:hover {
+      color: #3498db;
+    }
+    .image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 20px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+.image:hover {
+    transform: scale(1.05);
+}
+.image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 20px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+.image:hover {
+    transform: scale(1.05);
+}
+
+.container {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeIn 1s ease-in-out forwards;
+}
+.container a:hover{
+    color: white;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+button {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(45deg, #27ae60, #2ecc71);
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+    border: none;
+    cursor: pointer;
+}
+button {
+    background: linear-gradient(45deg, #27ae60, #2ecc71);
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+button:hover {
+    background: linear-gradient(45deg, #2ecc71, #27ae60);
+    transform: scale(1.07);
+}
+
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 17px;
+}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Zhetisy</h1>
+    <nav>
+      <a href="#home">Главная</a>
+      <a href="#mountain">Горы Жетысу</a>
+      <a href="#lake">Озёра и реки</a>
+      <a href="#flora">Растения Жетысу</a>
+      <a href="#nature">Животный мир</a>
+      <a href="#galery">Галерея</a>
+    </nav>
+  </header>
+
+  <main>
+    <div id="home" class="container">
+      <h2>Добро пожаловать в Жетысу</h2>
+      <p>Жетысу — регион удивительной природы, расположенный в юго-восточной части Казахстана.</p>
+    </div>
+    <div id="flora" class="container">
+      <h2>Флора Жетысу</h2>
+      <ul>
+        <li><a href="https://ru.wikipedia.org/wiki/Тюльпан" target="_blank">Тюльпаны Жетысу</a> — дикие, яркие и редкие виды.</li>
+      </ul>
+    </div>
+
+    <div id="mountain" class="container">
+        <h2>Горы Жетысу</h2>
+        <img src="https://www.cojeco.cz/images/descript/be762baf966b283d77b753cf32f0f82e.jpeg" alt="Жонгарский Алатау" class="image">
+        <ul>
+          <li><a href="https://ru.wikipedia.org/wiki/Жонгарский_Алатау" target="_blank">Жонгарский Алатау</a> — мощный горный хребет.</li>
+          <li><a href="https://ru.wikipedia.org/wiki/Кетмен" target="_blank">Кетмен</a> — живописные горы, покрытые лесами.</li>
+        </ul>
+      </div>
+      
+      <div id="lake" class="container">
+        <h2>Озёра и реки</h2>
+        <img src="https://kompastour.com/useruploads/regions/region_5998b7edc5.jpg" alt="Озеро Алаколь" class="image">
+        <ul>
+          <li><a href="https://ru.wikipedia.org/wiki/Алаколь" target="_blank">Озеро Алаколь</a> — солёное озеро с целебным климатом.</li>
+          <li><a href="https://ru.wikipedia.org/wiki/Река_Или" target="_blank">Река Или</a> — главная река региона.</li>
+        </ul>
+      </div>
+      
+      <div id="nature" class="container">
+        <h2>Животный мир</h2>
+        <img src="https://avatars.mds.yandex.net/i?id=8598269b0e5f6b8e851aecb0afdc397266394f4f-9843573-images-thumbs&n=13" alt="Снежный барс" class="image">
+        <ul>
+          <li><a href="https://ru.wikipedia.org/wiki/Ирбис" target="_blank">Снежный барс</a> — грациозное горное животное.</li>
+          <li><a href="https://ru.wikipedia.org/wiki/Архар" target="_blank">Архар</a> — сильное и выносливое горное животное.</li>
+        </ul>
+      </div>
+      
+      <div id="galery" class="container">
+        <h2>Галерея</h2>
+        <div class="gallery">
+          <img src="https://www.gov.kz/uploads/2024/5/20/801f74355b4aac23570cc4508539d36b_original.6506497.JPG" alt="Природа Жетысу" class="gallery-item">
+          <img src="https://www.cojeco.cz/images/descript/be762baf966b283d77b753cf32f0f82e.jpeg" alt="Горы Жетысу" class="gallery-item">
+          <img src="https://kompastour.com/useruploads/regions/region_5998b7edc5.jpg" alt="Озёра Жетысу" class="gallery-item">
+          <img src="https://avatars.mds.yandex.net/i?id=8598269b0e5f6b8e851aecb0afdc397266394f4f-9843573-images-thumbs&n=13" alt="Животный мир Жетысу" class="gallery-item">
+        </div>
+        <div id="popup" class="popup">
+          <span class="close">&times;</span>
+          <img id="popup-img" src="" alt="Просмотр">
+        </div>
+      </div>
+      
+
+  </main>
+  <script>
+    document.querySelectorAll('.gallery-item').forEach(img => {
+  img.addEventListener('click', () => {
+    document.getElementById('popup-img').src = img.src;
+    document.getElementById('popup').style.display = 'flex';
+  });
+});
+
+document.querySelector('.close').addEventListener('click', () => {
+  document.getElementById('popup').style.display = 'none';
+});
+
+  </script>
+</body>
+</html>
